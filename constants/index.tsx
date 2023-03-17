@@ -148,7 +148,7 @@ import {
     {
       name: "Jobs Board",
       description:
-        "Web-based platform that allows users to search, apply and manage their jobs application.",
+        "Web-based platform that allows users to search, apply and manage their job applications.",
       tags: [
         {
           name: "react",
@@ -169,7 +169,7 @@ import {
     {
       name: "Task List",
       description:
-        "A simple task list made with react and typescript. Something that i built when learning react and will also improve and apply new concepts to the same in future.",
+        "A simple task list made with react and typescript. Something that I built when learning react and will also improve and apply new concepts to the same in future.",
       tags: [
         {
           name: "react",
@@ -190,7 +190,7 @@ import {
     {
       name: "My Portfolio",
       description:
-        "I don't this this needs a description as you are checking it out already!!! But well this is my attempt at making a impressive portfolio website with Next.js, Three.js & Tailwind CSS. Might add a mongo connection soon. So contact me if there's anything that i can do for you.",
+        "I don't think this needs a description as you are checking it out already!!! But well this is my attempt at making an impressive portfolio website with Next.js, Three.js & Tailwind CSS. Might add a mongo connection soon. So contact me if there's anything that I can do for you.",
       tags: [
         {
           name: "nextjs",
