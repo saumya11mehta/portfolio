@@ -172,5 +172,5 @@ This section used to mention useful resources and libraries that used in 3D Port
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="center">
-<img src="https://github.com/saumya11mehta/portfolio/assets/logo.png" height="auto" width="10%" />
+<img src="https://github.com/saumya11mehta/portfolio/blob/main/assets/logo.png" height="auto" width="10%" />
 </p>
