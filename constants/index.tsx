@@ -20,6 +20,7 @@ import {
     jobsdash,
     tasklist,
     portfolio,
+    droneportal,
     threejs,
   } from "../assets";
   
@@ -235,6 +236,31 @@ import {
       image: portfolio,
       source_code_link: "https://github.com/saumya11mehta/portfolio",
     },
+    {
+      name: "Drone Portal",
+      description:
+        "Web-based Ground Control Station that allows user to plan drone missions.",
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "jotai",
+          color: "green-text-gradient",
+        },
+        {
+          name: "tailwind css",
+          color: "pink-text-gradient",
+        },
+        {
+          name: "openlayers",
+          color: "orange-text-gradient",
+        },
+      ],
+      image: droneportal,
+      source_code_link: "https://github.com/saumya11mehta/ground-control-station",
+    }
   ];
   
   export { services, technologies, technologiesMobile, experiences, projects };

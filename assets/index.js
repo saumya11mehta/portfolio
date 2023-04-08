@@ -27,6 +27,7 @@ import sparsh from "./company/sparsh.svg";
 import jobsdash from "./jobsdash.png";
 import tasklist from "./TaskList.png";
 import portfolio from "./portfolio.png";
+import droneportal from "./dronePortal.png";
 
 export {
   logo,
@@ -54,5 +55,6 @@ export {
   sparsh,
   jobsdash,
   tasklist,
-  portfolio
+  portfolio,
+  droneportal
 };
