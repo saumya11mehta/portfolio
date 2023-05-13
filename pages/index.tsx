@@ -9,8 +9,8 @@ export default function Home() {
         <title>Saumya Mehta | Full Stack Developer</title>
         <link rel="icon" href={favicon.src} />
       </Head>
-      <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+      <div className="relative z-0 bg-gradient-to-tl from-blue-500 to-primary dark:bg-gradient-to-bl dark:from-primary dark:to-black">
+        <div className="bg-hero-pattern  dark:bg-hero-pattern-dark bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
         </div>
