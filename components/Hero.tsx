@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { motion } from "framer-motion";
-import { ComputersCanvasLight,ComputersCanvasDark } from "./canvas";
+import { ComputerCanvas } from "./canvas";
 import { useEffect, useState } from 'react';
 import { useAtom } from 'jotai';
 import { darkModeAtom } from "../atoms/atoms";
@@ -8,8 +8,6 @@ import { darkModeAtom } from "../atoms/atoms";
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
   
-  const [darkMode, setDarkMode] = useAtom(darkModeAtom);
-
   useEffect(() => {
     // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
@@ -52,8 +50,7 @@ const Hero = () => {
         </div>
       </div>
       
-      {!isMobile && !darkMode && <ComputersCanvasLight />}
-      {!isMobile && darkMode && <ComputersCanvasDark />}
+      {!isMobile && <ComputerCanvas />}
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-10">
         <Link href="#about">

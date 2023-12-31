@@ -4,9 +4,14 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 import { ComputersType } from "@/types/types";
+import { useAtom } from 'jotai';
+import { darkModeAtom } from "@/atoms/atoms";
 
-const ComputersDark = ({ isMobile } : ComputersType) => {
-  const computer =useGLTF("/desktop_pc/scene.gltf");  
+
+const Computer = ({ isMobile } : ComputersType) => {
+  const computer =useGLTF("/desktop_pc_light/scene.gltf");
+  const computerDark =useGLTF("/desktop_pc/scene.gltf");
+  const [darkMode, setDarkMode] = useAtom(darkModeAtom);
 
   return (
     <mesh>
@@ -20,17 +25,25 @@ const ComputersDark = ({ isMobile } : ComputersType) => {
         shadow-mapSize={1024}
       />
       <pointLight intensity={1} />
-      <primitive
+      {!darkMode && <primitive
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
         position={isMobile ? [0, -3, -2.2] : [0, -4.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
+      }
+      {darkMode && <primitive
+        object={computerDark.scene}
+        scale={isMobile ? 0.7 : 0.75}
+        position={isMobile ? [0, -3, -2.2] : [0, -4.25, -1.5]}
+        rotation={[-0.01, -0.2, -0.1]}
+      />
+      }
     </mesh>
   );
 };
 
-const ComputersCanvasDark = () => {
+const ComputerCanvas = () => {
   const [isMobile, setIsMobile] = useState(false); 
 
   useEffect(() => {
@@ -68,7 +81,7 @@ const ComputersCanvasDark = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <ComputersDark isMobile={isMobile} />
+        <Computer isMobile={isMobile} />
       </Suspense>
 
       <Preload all />
@@ -77,4 +90,4 @@ const ComputersCanvasDark = () => {
   
 };
 
-export default ComputersCanvasDark;
+export default ComputerCanvas;

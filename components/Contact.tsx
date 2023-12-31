@@ -1,13 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { EarthCanvas } from "./canvas";
-import { SunCanvas } from "./canvas";
+import { EarthAndSunCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import React from "react";
-import { useAtom } from 'jotai';
-import { darkModeAtom } from "../atoms/atoms";
 
 const Contact = () => {
   const formRef  = React.useRef<HTMLFormElement>(null);
@@ -17,7 +14,6 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  const [darkMode, setDarkMode] = useAtom(darkModeAtom);
 
   const handleChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -124,8 +120,7 @@ const Contact = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
-        {!darkMode && <SunCanvas />}
-        {darkMode && <EarthCanvas />}
+        <EarthAndSunCanvas />
       </motion.div>
     </div>
   );

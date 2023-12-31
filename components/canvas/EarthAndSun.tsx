@@ -3,16 +3,23 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
+import { useAtom } from 'jotai';
+import { darkModeAtom } from "@/atoms/atoms";
 
-const Earth = () => {
+const EarthAndSun = () => {
   const earth = useGLTF("./planet/scene.gltf");
+  const sun = useGLTF("./sun/scene.gltf");
+  const [darkMode, setDarkMode] = useAtom(darkModeAtom);
 
   return (
-    <primitive object={earth.scene} scale={2.5} position-y={0} rotation-y={0} />
+    <>
+    {darkMode && <primitive object={earth.scene} scale={2.5} position-y={0} rotation-y={0} />}
+    {!darkMode && <primitive object={sun.scene} scale={0.2} position-y={0} rotation-y={0} />}
+    </>
   );
 };
 
-const EarthCanvas = () => {
+const EarthAndSunCanvas = () => {
   return (
     <Canvas
       shadows
@@ -33,7 +40,7 @@ const EarthCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Earth />
+        <EarthAndSun />
 
         <Preload all />
       </Suspense>
@@ -41,4 +48,4 @@ const EarthCanvas = () => {
   );
 };
 
-export default EarthCanvas;
+export default EarthAndSunCanvas;
