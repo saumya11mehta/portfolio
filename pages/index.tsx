@@ -8,6 +8,7 @@ export default function Home() {
       <Head>
         <title>Saumya Mehta | Full Stack Developer</title>
         <link rel="icon" href={favicon.src} />
+        <meta name="theme-color" content="#3b82f6" />
       </Head>
       <div className="relative z-0 bg-gradient-to-tl from-blue-500 to-primary dark:bg-gradient-to-bl dark:from-primary dark:to-black">
         <div className="bg-hero-pattern  dark:bg-hero-pattern-dark bg-cover bg-no-repeat bg-center">
