@@ -8,9 +8,15 @@
     "theme_color": "#3b82f6",
     "icons": [
       {
-        "src": "/favicon.ico",
-        "sizes": "32x25",
-        "type": "image/x-icon"
+        "src": "/logo.png",
+        "sizes": "196x196",
+        "type": "image/png"
+      },
+      {
+        "src": "/maskable-icon.png",
+        "sizes": "196x196",
+        "type": "image/png",
+        "purpose": "maskable"
       }
     ]
   }
