@@ -1,0 +1,16 @@
+{
+    "name": "Portfolio - Saumya Mehta",
+    "short_name": "P-SM",
+    "description": "A simple portfolio website belonging to Saumya Mehta",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#3b82f6",
+    "icons": [
+      {
+        "src": "/favicon.ico",
+        "sizes": "32x25",
+        "type": "image/x-icon"
+      }
+    ]
+  }
