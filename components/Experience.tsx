@@ -6,10 +6,10 @@ import {
 import { motion } from "framer-motion";
 import Image from "next/image";
 import "react-vertical-timeline-component/style.min.css";
-import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 import { ExperienceCardType } from "@/types/types";
+import { useData } from "@/constants/DataProvider";
 
 
 
@@ -26,8 +26,9 @@ const ExperienceCard = ({ experience } : ExperienceCardType) => {
       icon={
         <div className="flex justify-center items-center w-full h-full">
           <Image
-            src={experience.icon}
+            src={`/assets/company/${experience.icon}`}
             alt={experience.company_name}
+            width={400} height={300}
             className="w-[60%] h-[60%] object-contain"
           />
         </div>
@@ -58,6 +59,7 @@ const ExperienceCard = ({ experience } : ExperienceCardType) => {
 };
 
 const Experience = () => {
+  const { experiences } = useData();
   return (
     <>
       <motion.div variants={textVariant(0)}>
@@ -67,7 +69,7 @@ const Experience = () => {
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
-          {experiences.map((experience, index) => (
+          {experiences && experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />
           ))}
         </VerticalTimeline>

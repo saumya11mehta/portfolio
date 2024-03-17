@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import favicon from '../public/favicon.ico';
 import { About,Contact,Experience,Hero,Navbar,Tech,Works,StarsCanvas } from "../components";
+import DataProvider from '../constants/DataProvider';
 
 export default function Home() {
   return (
-    <>
+    <DataProvider>
       <Head>
         <title>Saumya Mehta | Full Stack Developer</title>
         <link rel="icon" href={favicon.src} />
@@ -25,6 +26,6 @@ export default function Home() {
           <StarsCanvas />
         </div>
       </div>
-    </>
+    </DataProvider>
   )
 }

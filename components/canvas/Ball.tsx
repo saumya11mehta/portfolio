@@ -13,7 +13,7 @@ import { BallType, BallCanvasType } from "@/types/types";
 
 
 const Ball = ({imgUrl}:BallType) => {
-  const [decal] = useTexture([imgUrl.src]);
+  const [decal] = useTexture([`/assets/tech/${imgUrl}`]);
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={0.25} />

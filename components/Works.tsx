@@ -1,11 +1,11 @@
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { github } from "../assets";
+import { github } from "../public/assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { ProjectCardType } from "@/types/types";
+import { useData } from "@/constants/DataProvider";
 
 
 const ProjectCard = ({
@@ -23,8 +23,9 @@ const ProjectCard = ({
       >
         <div className="relative w-full h-[230px]">
           <Image
-            src={image}
+            src={`/assets/${image}.png`}
             alt={name}
+            width={400} height={300}
             className="w-full h-full object-scale-down bg-white rounded-2xl"
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
@@ -57,6 +58,8 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const { projects } = useData();
+
   return (
     <>
       <motion.div variants={textVariant(0)}>
@@ -78,7 +81,7 @@ const Works = () => {
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7">
-        {projects.map((project, index) => (
+        {projects && projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
