@@ -2,11 +2,10 @@ import React from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { ServiceCardType } from "@/types/types";
+import { useData } from "@/constants/DataProvider";
 
 const ServiceCard = ({ index, title, icon } : ServiceCardType) => (
   <Tilt className="xs:w-[250px] w-full" >
@@ -16,8 +15,9 @@ const ServiceCard = ({ index, title, icon } : ServiceCardType) => (
     >
       <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
         <Image
-          src={icon}
+          src={`/assets/${icon}.png`}
           alt="web-development"
+          width={400} height={300}
           className="w-16 h-16 object-contain"
         />
         <h3 className="text-white text-[20px] font-bold text-center">
@@ -29,6 +29,7 @@ const ServiceCard = ({ index, title, icon } : ServiceCardType) => (
 );
 
 const About = () => {
+  const { services } = useData();
   return (
     <>
       <motion.div variants={textVariant(0)}>
@@ -46,7 +47,7 @@ const About = () => {
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
-        {services.map((service, index) => (
+        {services && services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
