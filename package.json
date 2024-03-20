@@ -28,7 +28,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
-    "react-parallax-tilt": "^1.7.115",
+    "react-parallax-tilt": "^1.7.212",
     "react-redux": "^8.0.5",
     "react-vertical-timeline-component": "^3.6.0",
     "tailwind": "^4.0.0",
