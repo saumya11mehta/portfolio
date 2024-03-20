@@ -1,10 +1,11 @@
 import { BallCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
-import { technologies,technologiesMobile } from "../constants";
 import { useState, useEffect } from "react";
+import { useData } from "@/constants/DataProvider";
 
 const Tech = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { technologies } = useData();
 
   useEffect(() => {
     // Add a listener for changes to the screen size
@@ -27,15 +28,15 @@ const Tech = () => {
     };
   }, []);
 
-  let techStack = technologiesMobile;
+  let techStack = technologies?.filter(technology => technology.isMobile);
   if(!isMobile){
-    techStack = technologies
+    techStack = technologies ? technologies : [];
   }
   
   return (
     <>
       <div className="flex flex-row flex-wrap justify-center gap-10 my-20">
-        {techStack.map((technology) => (
+        {techStack && techStack.map((technology) => (
           <div className="w-28 h-28" key={technology.name}>
             <BallCanvas icon={technology.icon} />
           </div>
